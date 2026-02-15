@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate required files
+        run: |
+          test -f README.md
+          test -f config/predictor.json
+          test -f scripts/backtest_predict.js
+
+      - name: JavaScript syntax check
+        run: |
+          node --check scripts/backtest_predict.js
+          node --check scripts/compute_astro.js
+          node --check scripts/generate_predictions.js
+          node --check scripts/tune_predictor.js
+          node --check scripts/merge_tuning_chunks.js
+          node --check scripts/report_tuning.js
