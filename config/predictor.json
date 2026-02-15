@@ -1,0 +1,11 @@
+{
+  "windowSize": 200,
+  "halfLife": 20,
+  "explore": 0.1,
+  "hotBoost": 0.05,
+  "coldBoost": 0.1,
+  "coldWindow": 25,
+  "ticketsPerDraw": 10,
+  "minHistory": 50,
+  "seed": 42
+}

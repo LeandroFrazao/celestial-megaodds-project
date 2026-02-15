@@ -1,0 +1,17 @@
+node_modules/
+.tmp_xlsx/
+npm-debug.log*
+
+# Generated data artifacts
+data/mega_sena.csv
+data/mega_sena.json
+data/mega_sena_astro.json
+data/backtest_results.json
+data/backtest_results.csv
+data/tuning_results*.json
+data/tuning_results*.csv
+data/tuning_chunk_*.json
+data/tuning_chunk_*.csv
+data/*report*.html
+data/predictions*.json
+data/predictions*.csv
