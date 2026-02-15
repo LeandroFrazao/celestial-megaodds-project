@@ -139,10 +139,38 @@ node .\scripts\merge_tuning_chunks.js .\data .\data\tuning_results_full.json .\d
 node .\scripts\report_tuning.js .\data\tuning_results_full.json .\data\tuning_report_full.html
 ```
 
+
+## Predict next draw (CLI)
+
+Generate tickets for any target draw date/time using the current tuned config:
+
+```powershell
+node .\scripts\predict_next.js --date YYYY-MM-DD --hour 21 --minute 0 --tickets 20
+```
+
+Example:
+
+```powershell
+node .\scripts\predict_next.js --date 2025-12-31 --hour 22 --minute 0 --tickets 20
+```
+
+Or via npm script:
+
+```powershell
+npm run predict:next -- --date 2025-12-31 --hour 22 --minute 0 --tickets 20
+```
+
+Optional flags:
+- `--input` path to historical dataset (default: `data/mega_sena_astro.json`)
+- `--out` output JSON path
+- `--csv` output CSV path
+- `--lat` latitude (default: `-23.564`)
+- `--lon` longitude (default: `-46.651`)
 ## Notes
 
 - The astrology calculations use `circular-natal-horoscope-js`.
 - Lunar phases include phase name, angle, and illumination.
 - The predictor is experimental and not intended for real-world betting.
+
 
 
