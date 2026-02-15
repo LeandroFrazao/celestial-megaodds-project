@@ -1,4 +1,4 @@
-# Project Lottery
+# Celestial MegaOdds
 
 This project builds an experimental pipeline for Mega-Sena draws:
 1) Parse draw history
@@ -7,6 +7,21 @@ This project builds an experimental pipeline for Mega-Sena draws:
 4) Tune weights via walk-forward optimization
 
 Note: Mega-Sena is designed to be random. The predictor is for exploration only.
+
+## Prerequisites
+
+- Node.js 16+ (Node 18+ recommended)
+- npm 8+
+- Windows PowerShell 5.1+ or PowerShell 7+
+- The historical input file `Mega-Sena.xlsx` in the project root
+
+Check versions:
+
+```powershell
+node -v
+npm -v
+powershell -Version
+```
 
 ## Quick start
 
@@ -129,3 +144,5 @@ node .\scripts\report_tuning.js .\data\tuning_results_full.json .\data\tuning_re
 - The astrology calculations use `circular-natal-horoscope-js`.
 - Lunar phases include phase name, angle, and illumination.
 - The predictor is experimental and not intended for real-world betting.
+
+
